@@ -1,17 +1,15 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
+  margin: 0;
   background: #ffeef0;
   font-family: 'Dancing Script', cursive;
-  overflow: hidden;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: auto;
+  text-align: center;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 .fondo {
@@ -20,6 +18,7 @@ body {
   height: 100%;
   z-index: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .fondo img {
@@ -40,25 +39,34 @@ body {
   }
 }
 
-.carta {
+.carta-container {
   position: relative;
   z-index: 1;
-  max-width: 600px;
-  width: 90%;
-  height: 80vh;
-  padding: 30px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  line-height: 1.7;
-  font-size: 1.3em;
-  overflow-y: auto;
-  text-align: center;
-  scroll-behavior: smooth;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.carta p {
-  white-space: pre-wrap;
+.carta {
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .carta {
+    font-size: 1em;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .fondo img {
+    width: 60px;
+  }
 }
 
 .final {
