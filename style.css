@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffeef0;
+  font-family: 'Dancing Script', cursive;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fondo {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.fondo img {
+  position: absolute;
+  width: 100px;
+  opacity: 0.8;
+  animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.carta {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  width: 90%;
+  height: 80vh;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  line-height: 1.7;
+  font-size: 1.3em;
+  overflow-y: auto;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+.carta p {
+  white-space: pre-wrap;
+}
+
+.final {
+  margin-top: 40px;
+  position: relative;
+}
+
+.img-final {
+  width: 150px;
+  animation: latido 2s infinite;
+  filter: drop-shadow(0 0 10px red);
+}
+
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.corazon-aura::before, .corazon-aura::after {
+  content: "💖";
+  position: absolute;
+  animation: subir 3s infinite ease-in;
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+.corazon-aura::after {
+  left: 60%;
+  animation-delay: 1s;
+}
+
+@keyframes subir {
+  0% {
+    bottom: 0;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    bottom: 100px;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+.oculto {
+  display: none;
+}
